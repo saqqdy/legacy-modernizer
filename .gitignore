@@ -5,3 +5,10 @@ coverage/
 *.bak
 *_bak
 stats.html
+
+# VitePress
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Claude Code
+.claude/
