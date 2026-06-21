@@ -23,6 +23,7 @@ export default defineConfig({
 					copyright: 'Copyright © 2024-present saqqdy',
 					message: 'Released under the MIT License.',
 				},
+				lastUpdated: { text: 'Updated at' },
 				nav: [
 					{ activeMatch: '/guide/', link: '/guide/', text: 'Guide' },
 					{ activeMatch: '/api/', link: '/api/', text: 'API' },
@@ -106,6 +107,7 @@ export default defineConfig({
 					copyright: '版权所有 © 2024-present saqqdy',
 					message: '基于 MIT 许可发布',
 				},
+				lastUpdated: { text: '最后更新' },
 				nav: [
 					{ activeMatch: '/zh/guide/', link: '/zh/guide/', text: '指南' },
 					{ activeMatch: '/zh/api/', link: '/zh/api/', text: 'API' },
@@ -173,6 +175,10 @@ export default defineConfig({
 			},
 			title: 'Legacy Modernizer',
 		},
+	},
+
+	sitemap: {
+		hostname: 'https://saqqdy.github.io/legacy-modernizer',
 	},
 
 	themeConfig: {
