@@ -31,7 +31,8 @@
 		"typecheck": "tsc --noEmit",
 		"docs:dev": "vitepress dev docs",
 		"docs:build": "vitepress build docs",
-		"docs:preview": "vitepress preview docs"
+		"docs:preview": "vitepress preview docs",
+		"playground": "npx sirv . --dev --port 5174 --single playground/index.html"
 	},
 	"devDependencies": {
 		"@eslint-sets/eslint-config": "^6.3.1",
