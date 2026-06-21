@@ -18,3 +18,9 @@ Legacy Modernizer 是一个 Claude Code Skill 插件，帮助开发者用 AI 语
 2. **逐文件确认** — 每次修改展示 diff，不做盲批
 3. **渐进式** — 支持按维度逐步迁移
 4. **可验证** — 每步迁移前后验证语义一致性
+
+## 下一步？
+
+- [安装](/zh/guide/installation) — 2 分钟完成设置
+- [快速上手](/zh/guide/quick-start) — 扫描你的第一个项目
+- [Vue 2 → 3](/zh/guide/vue2-to-vue3) — 了解迁移路径

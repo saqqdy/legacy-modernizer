@@ -1,3 +1,12 @@
-# risk assessment
+# RiskAssessment
 
-参见 [English version](/api/types/risk-assessment.html)
+迁移风险评估。
+
+```typescript
+interface RiskAssessment {
+  level: 'low' | 'medium' | 'high'
+  reason: string
+  recommendedOrder: MigrationDimension[]
+  estimatedEffort: number  // 人天
+}
+```

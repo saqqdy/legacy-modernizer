@@ -109,7 +109,7 @@ export default defineConfig({
 				nav: [
 					{ activeMatch: '/zh/guide/', link: '/zh/guide/', text: '指南' },
 					{ activeMatch: '/zh/api/', link: '/zh/api/', text: 'API' },
-					{ link: '/playground/', text: 'Playground' },
+					{ link: '/zh/playground/', text: 'Playground' },
 					{
 						items: [
 							{ link: 'https://github.com/saqqdy/legacy-modernizer', text: 'GitHub' },

@@ -14,3 +14,12 @@ Codemod 看到 `this.$refs.input`，不知道：
 Legacy Modernizer 读取上下文：
 - "这个 ref 在 `mounted()` 中用于调用 `focus()`"
 - → 生成 `useTemplateRef<HTMLInputElement>('input')` + `onMounted(() => inputRef.value?.focus())`
+
+## 工作原理
+
+1. **模式检测** — 正则规则识别候选拓展模式
+2. **上下文提取** — AI 读取周围代码理解意图
+3. **语义转换** — 生成语义等价的现代代码
+4. **验证** — 对比前后行为等价性
+
+这就是 Legacy Modernizer 作为 Claude Code Skill 实现的原因 — AI 推理是产品的核心，而非附加功能。

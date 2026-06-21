@@ -1,3 +1,17 @@
-# modernizer config
+# ModernizerConfig
 
-参见 [English version](/api/types/modernizer-config.html)
+扫描器配置。
+
+```typescript
+interface ModernizerConfig {
+  dimensions: Record<MigrationDimension, DimensionConfig>
+  maxFiles: number
+  includeSuggestions: boolean
+}
+
+interface DimensionConfig {
+  enabled: boolean
+  include: string[]
+  exclude: string[]
+}
+```
