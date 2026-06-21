@@ -2,6 +2,7 @@
  * Formatting utility functions
  */
 
+import type { Locale } from '../reporters/locale'
 import type { LegacyPattern, MigrationDimension, PatternSeverity } from '../types'
 
 /** Pattern severity → emoji badge */
@@ -11,20 +12,20 @@ const SEVERITY_BADGE: Record<PatternSeverity, string> = {
 	info: '🔵',
 }
 
-/** Migration dimension → display label */
-const DIMENSION_LABEL: Record<MigrationDimension, string> = {
-	'vue2-to-vue3': 'Vue 2 → 3',
-	'js-to-ts': 'JS → TS',
-	'webpack-to-vite': 'Webpack → Vite',
-	'jest-to-vitest': 'Jest → Vitest',
-	'vuex-to-pinia': 'Vuex → Pinia',
-	'eslint-modernize': 'ESLint 现代化',
+/** Migration dimension → display label (i18n) */
+const DIMENSION_LABELS: Record<MigrationDimension, Record<Locale, string>> = {
+	'vue2-to-vue3': { en: 'Vue 2 → 3', zh: 'Vue 2 → 3' },
+	'js-to-ts': { en: 'JS → TS', zh: 'JS → TS' },
+	'webpack-to-vite': { en: 'Webpack → Vite', zh: 'Webpack → Vite' },
+	'jest-to-vitest': { en: 'Jest → Vitest', zh: 'Jest → Vitest' },
+	'vuex-to-pinia': { en: 'Vuex → Pinia', zh: 'Vuex → Pinia' },
+	'eslint-modernize': { en: 'ESLint Modernize', zh: 'ESLint 现代化' },
 }
 
 /** Format a legacy pattern as a Markdown list item */
 export function patternToMarkdown(p: LegacyPattern): string {
 	const badge = SEVERITY_BADGE[p.severity] ?? '❓'
-	const dim = DIMENSION_LABEL[p.dimension] ?? p.dimension
+	const dim = DIMENSION_LABELS[p.dimension]?.zh ?? p.dimension
 	const loc = p.line > 0 ? `:${p.line}` : ''
 	const line = `- ${badge} **${p.name}** [${dim}] \`${p.file}${loc}\``
 	return p.suggestion ? `${line}\n  → ${p.suggestion}` : line
@@ -35,9 +36,9 @@ export function severityBadge(severity: PatternSeverity): string {
 	return SEVERITY_BADGE[severity] ?? '❓'
 }
 
-/** Get display label for dimension */
-export function dimensionLabel(dimension: MigrationDimension): string {
-	return DIMENSION_LABEL[dimension] ?? dimension
+/** Get display label for dimension (locale-aware) */
+export function dimensionLabel(dimension: MigrationDimension, locale: Locale = 'zh'): string {
+	return DIMENSION_LABELS[dimension]?.[locale] ?? dimension
 }
 
 /** Format duration in ms to human-readable */

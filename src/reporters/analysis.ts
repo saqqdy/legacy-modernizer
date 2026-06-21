@@ -8,10 +8,7 @@ import { dimensionLabel, formatDuration, severityBadge } from '../utils/format'
 import { LABELS, type Locale } from './locale'
 
 /** Render a full AnalysisReport into Markdown */
-export function renderAnalysisReport(
-	report: AnalysisReport,
-	locale: Locale = 'zh'
-): string {
+export function renderAnalysisReport(report: AnalysisReport, locale: Locale = 'zh'): string {
 	const t = LABELS[locale]
 	const lines: string[] = []
 
@@ -32,11 +29,13 @@ export function renderAnalysisReport(
 	// Dimension stats table
 	lines.push(t.dimensions)
 	lines.push('')
-	lines.push(`| ${t.dimension} | ${t.count} | ${t.affectedFiles} | 🔴${t.critical} | 🟡${t.warning} | 🔵${t.info} |`)
+	lines.push(
+		`| ${t.dimension} | ${t.count} | ${t.affectedFiles} | 🔴${t.critical} | 🟡${t.warning} | 🔵${t.info} |`
+	)
 	lines.push('|------|--------|-----------|--------|--------|--------|')
 	for (const d of report.dimensions) {
 		lines.push(
-			`| ${dimensionLabel(d.dimension)} | ${d.count} | ${d.files} | ${d.bySeverity.critical} | ${d.bySeverity.warning} | ${d.bySeverity.info} |`
+			`| ${dimensionLabel(d.dimension, locale)} | ${d.count} | ${d.files} | ${d.bySeverity.critical} | ${d.bySeverity.warning} | ${d.bySeverity.info} |`
 		)
 	}
 	lines.push('')
@@ -52,7 +51,7 @@ export function renderAnalysisReport(
 		.slice(0, 20)
 	for (const p of sorted) {
 		const badge = severityBadge(p.severity)
-		const dim = dimensionLabel(p.dimension)
+		const dim = dimensionLabel(p.dimension, locale)
 		const loc = p.line > 0 ? `:${p.line}` : ''
 		lines.push(`${badge} **${p.name}** [${dim}] \`${p.file}${loc}\``)
 		if (p.suggestion) lines.push(`  → ${p.suggestion}`)
@@ -64,7 +63,9 @@ export function renderAnalysisReport(
 	lines.push('')
 	lines.push(`- **${t.riskLevel}**: **${report.risk.level.toUpperCase()}**`)
 	lines.push(`- **${t.reason}**: ${report.risk.reason}`)
-	lines.push(`- **${t.recommendedOrder}**: ${report.risk.recommendedOrder.map(dimensionLabel).join(' → ')}`)
+	lines.push(
+		`- **${t.recommendedOrder}**: ${report.risk.recommendedOrder.map(d => dimensionLabel(d, locale)).join(' → ')}`
+	)
 	lines.push(`- **${t.estimatedEffort}**: ${report.risk.estimatedEffort} ${t.personDays}`)
 	lines.push('')
 
