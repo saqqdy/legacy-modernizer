@@ -9,9 +9,12 @@
   - Simplify schema: remove non-standard `commands` and `skills` fields (auto-discovered from skill frontmatter)
   - Fix `repository` field format (string URL instead of object)
   - Prepare for Community Marketplace submission
+- **marketplace**: add `.claude-plugin/marketplace.json` for GitHub-based plugin distribution
+  - Support `/plugin marketplace add saqqdy/legacy-modernizer` one-line setup
+  - Users can install via marketplace or direct URL
 - **docs**: update README installation instructions
-  - Recommend `/plugin install` one-line setup
-  - Add manual installation fallback section
+  - Recommend marketplace installation as primary method
+  - Add direct install and marketplace install options
   - Sync Chinese and English documentation
 
 ## 0.1.0 (2026-06-21)
