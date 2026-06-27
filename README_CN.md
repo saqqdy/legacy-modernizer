@@ -55,10 +55,19 @@
 
 ### 方式 1: Claude Code 插件（推荐）
 
-一行命令安装为 Claude Code 插件：
+**通过市场安装（推荐）：**
 
 ```bash
-# 在 Claude Code 中执行：
+# 1. 添加本仓库作为市场
+/plugin marketplace add saqqdy/legacy-modernizer
+
+# 2. 安装插件
+/plugin install legacy-modernizer
+```
+
+**直接安装：**
+
+```bash
 /plugin install https://github.com/saqqdy/legacy-modernizer
 ```
 
@@ -73,13 +82,6 @@
 1. 在一个 Vue 2 老项目中打开 Claude Code
 2. 输入 `/analyze` → 输出完整的遗留模式分析报告
 3. 输入 `/modernize` → 选择迁移维度（如 Vue 2→3），逐文件确认 diff 迁移
-
-**手动安装（备选方案）：**
-```bash
-cd your-project
-git clone https://github.com/saqqdy/legacy-modernizer.git .legacy-modernizer
-cp -r .legacy-modernizer/.claude/skills/ .claude/skills/
-```
 
 ### 方式 2: 编程式使用
 
@@ -213,6 +215,8 @@ Playground 内置了多种遗留代码示例文件，你可以：
 
 ```
 legacy-modernizer/
+├── .claude-plugin/                     # Claude Code 插件清单
+│   └── plugin.json                     # 市场兼容配置
 ├── .claude/skills/legacy-modernizer/   # Skill 提示词（核心产品）
 │   ├── skill.md                        # 主入口 + 命令路由
 │   ├── analyze.md                      # 扫描指令

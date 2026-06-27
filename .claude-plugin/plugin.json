@@ -1,0 +1,22 @@
+{
+  "name": "legacy-modernizer",
+  "version": "0.1.1",
+  "description": "Legacy Modernizer — AI-powered legacy code modernization for Vue 2→3, JS→TS, Webpack→Vite with semantic understanding",
+  "author": {
+    "name": "saqqdy",
+    "url": "https://github.com/saqqdy"
+  },
+  "repository": "https://github.com/saqqdy/legacy-modernizer",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "typescript",
+    "migration",
+    "modernization",
+    "legacy-code",
+    "vite",
+    "webpack",
+    "vue2-to-vue3",
+    "js-to-ts"
+  ]
+}

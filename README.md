@@ -61,10 +61,19 @@ Step-by-step guided migration with diff preview and confirmation at every step.
 
 ### Option 1: Claude Code Plugin (Recommended)
 
-Install as a Claude Code plugin for one-line setup:
+**Via Marketplace (recommended):**
 
 ```bash
-# In Claude Code, run:
+# 1. Add this repo as a marketplace
+/plugin marketplace add saqqdy/legacy-modernizer
+
+# 2. Install the plugin
+/plugin install legacy-modernizer
+```
+
+**Direct install:**
+
+```bash
 /plugin install https://github.com/saqqdy/legacy-modernizer
 ```
 
@@ -79,13 +88,6 @@ After installation, use these commands:
 1. Open Claude Code in a Vue 2 legacy project
 2. Type `/analyze` → get a full legacy pattern analysis report
 3. Type `/modernize` → select migration dimension (e.g. Vue 2→3), confirm diffs file by file
-
-**Manual installation (fallback):**
-```bash
-cd your-project
-git clone https://github.com/saqqdy/legacy-modernizer.git .legacy-modernizer
-cp -r .legacy-modernizer/.claude/skills/ .claude/skills/
-```
 
 ### Option 2: Programmatic Usage
 
@@ -219,6 +221,8 @@ The Playground ships with built-in legacy code samples so you can:
 
 ```
 legacy-modernizer/
+├── .claude-plugin/                     # Claude Code plugin manifest
+│   └── plugin.json                     # Marketplace-compatible configuration
 ├── .claude/skills/legacy-modernizer/   # Skill prompts (core product)
 │   ├── skill.md                        # Main entry + command routing
 │   ├── analyze.md                      # Scan instructions

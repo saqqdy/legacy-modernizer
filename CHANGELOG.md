@@ -4,10 +4,13 @@
 
 ### 🚀 Features
 
-- **plugin**: add `plugin.json` configuration for standard Claude Code plugin installation
-  - Supports `/plugin install https://github.com/saqqdy/legacy-modernizer` one-line setup
-  - Defines commands `/analyze` and `/modernize` with skill mappings
-- **docs**: update README installation instructions to recommend plugin installation method
+- **plugin**: add `.claude-plugin/plugin.json` for Claude Code marketplace compatibility
+  - Move plugin manifest from root to `.claude-plugin/` (standard location)
+  - Simplify schema: remove non-standard `commands` and `skills` fields (auto-discovered from skill frontmatter)
+  - Fix `repository` field format (string URL instead of object)
+  - Prepare for Community Marketplace submission
+- **docs**: update README installation instructions
+  - Recommend `/plugin install` one-line setup
   - Add manual installation fallback section
   - Sync Chinese and English documentation
 
