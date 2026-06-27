@@ -53,17 +53,16 @@
 
 ## 🚀 快速开始
 
-### 方式 1: Claude Code Skill（推荐）
+### 方式 1: Claude Code 插件（推荐）
 
-这是项目的核心用法，直接在 Claude Code 中使用自然语言驱动迁移：
+一行命令安装为 Claude Code 插件：
 
 ```bash
-cd your-project
-git clone https://github.com/saqqdy/legacy-modernizer.git .legacy-modernizer
-cp -r .legacy-modernizer/.claude/skills/ .claude/skills/
+# 在 Claude Code 中执行：
+/plugin install https://github.com/saqqdy/legacy-modernizer
 ```
 
-在 Claude Code 中：
+安装后可用命令：
 
 | 命令 | 功能说明 |
 |------|---------|
@@ -74,6 +73,13 @@ cp -r .legacy-modernizer/.claude/skills/ .claude/skills/
 1. 在一个 Vue 2 老项目中打开 Claude Code
 2. 输入 `/analyze` → 输出完整的遗留模式分析报告
 3. 输入 `/modernize` → 选择迁移维度（如 Vue 2→3），逐文件确认 diff 迁移
+
+**手动安装（备选方案）：**
+```bash
+cd your-project
+git clone https://github.com/saqqdy/legacy-modernizer.git .legacy-modernizer
+cp -r .legacy-modernizer/.claude/skills/ .claude/skills/
+```
 
 ### 方式 2: 编程式使用
 
@@ -189,7 +195,8 @@ Playground 内置了多种遗留代码示例文件，你可以：
 
 | 版本 | 代码名 | 主题 | 状态 |
 |------|--------|------|------|
-| v0.1.0 | Daybreak | 插件骨架 + `/analyze` 扫描器 | ✅ 当前 |
+| v0.1.0 | Daybreak | 插件骨架 + `/analyze` 扫描器 | ✅ 已发布 |
+| v0.1.1 | Daybreak | 标准插件安装支持 | ✅ 当前 |
 | v0.2.0 | Sunrise | Vue 2→3 单文件迁移 MVP | 📋 计划中 |
 | v0.3.0 | Dawn | Agent 批量迁移 + 验证 | 📋 计划中 |
 | v0.4.0 | Ember | JS→TS 渐进式迁移 | 📋 计划中 |

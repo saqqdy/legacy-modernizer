@@ -59,17 +59,16 @@ Step-by-step guided migration with diff preview and confirmation at every step.
 
 ## 🚀 Getting Started
 
-### Option 1: Claude Code Skill (Recommended)
+### Option 1: Claude Code Plugin (Recommended)
 
-This is the core usage — drive migration directly in Claude Code with natural language:
+Install as a Claude Code plugin for one-line setup:
 
 ```bash
-cd your-project
-git clone https://github.com/saqqdy/legacy-modernizer.git .legacy-modernizer
-cp -r .legacy-modernizer/.claude/skills/ .claude/skills/
+# In Claude Code, run:
+/plugin install https://github.com/saqqdy/legacy-modernizer
 ```
 
-Then in Claude Code:
+After installation, use these commands:
 
 | Command | Description |
 |---------|-------------|
@@ -80,6 +79,13 @@ Then in Claude Code:
 1. Open Claude Code in a Vue 2 legacy project
 2. Type `/analyze` → get a full legacy pattern analysis report
 3. Type `/modernize` → select migration dimension (e.g. Vue 2→3), confirm diffs file by file
+
+**Manual installation (fallback):**
+```bash
+cd your-project
+git clone https://github.com/saqqdy/legacy-modernizer.git .legacy-modernizer
+cp -r .legacy-modernizer/.claude/skills/ .claude/skills/
+```
 
 ### Option 2: Programmatic Usage
 
@@ -195,7 +201,8 @@ The Playground ships with built-in legacy code samples so you can:
 
 | Version | Codename | Theme | Status |
 |---------|----------|-------|--------|
-| v0.1.0 | Daybreak | Plugin skeleton + `/analyze` scanner | ✅ Current |
+| v0.1.0 | Daybreak | Plugin skeleton + `/analyze` scanner | ✅ Released |
+| v0.1.1 | Daybreak | Standard plugin installation support | ✅ Current |
 | v0.2.0 | Sunrise | Vue 2→3 single-file migration MVP | 📋 Planned |
 | v0.3.0 | Dawn | Agent-based batch migration + verification | 📋 Planned |
 | v0.4.0 | Ember | JS→TS progressive migration | 📋 Planned |

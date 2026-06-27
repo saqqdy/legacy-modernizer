@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.1 (2026-06-27)
+
+### 🚀 Features
+
+- **plugin**: add `plugin.json` configuration for standard Claude Code plugin installation
+  - Supports `/plugin install https://github.com/saqqdy/legacy-modernizer` one-line setup
+  - Defines commands `/analyze` and `/modernize` with skill mappings
+- **docs**: update README installation instructions to recommend plugin installation method
+  - Add manual installation fallback section
+  - Sync Chinese and English documentation
+
 ## 0.1.0 (2026-06-21)
 
 ### 🚀 Features

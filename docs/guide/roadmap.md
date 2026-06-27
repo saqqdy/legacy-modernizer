@@ -2,7 +2,8 @@
 
 | Version | Codename | Theme | Status |
 |---------|----------|-------|--------|
-| v0.1.0 | Daybreak | Plugin skeleton + `/analyze` scanner | ✅ Current |
+| v0.1.0 | Daybreak | Plugin skeleton + `/analyze` scanner | ✅ Released |
+| v0.1.1 | Daybreak | Standard plugin installation support | ✅ Current |
 | v0.2.0 | Sunrise | Vue 2→3 single-file migration MVP | 📋 Planned |
 | v0.3.0 | Dawn | Agent-based batch migration + verification | 📋 Planned |
 | v0.4.0 | Ember | JS→TS progressive migration | 📋 Planned |

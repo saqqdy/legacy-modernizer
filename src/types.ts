@@ -5,7 +5,13 @@
 // ─── Detection ───────────────────────────────────────────────
 
 /** Migration dimension — each represents a major upgrade path */
-export type MigrationDimension = 'vue2-to-vue3' | 'js-to-ts' | 'webpack-to-vite' | 'jest-to-vitest' | 'vuex-to-pinia' | 'eslint-modernize'
+export type MigrationDimension =
+	| 'vue2-to-vue3'
+	| 'js-to-ts'
+	| 'webpack-to-vite'
+	| 'jest-to-vitest'
+	| 'vuex-to-pinia'
+	| 'eslint-modernize'
 
 /** Severity of a detected legacy pattern */
 export type PatternSeverity = 'critical' | 'warning' | 'info'
@@ -163,4 +169,4 @@ export interface ModernizerConfig {
 	/** Whether to include suggestions in report */
 	includeSuggestions: boolean
 }
-export const VERSION = '0.1.0' as const
+export const VERSION = '0.1.1' as const
