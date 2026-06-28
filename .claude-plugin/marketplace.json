@@ -9,7 +9,7 @@
     {
       "name": "legacy-modernizer",
       "description": "AI-powered legacy code modernization for Vue 2→3, JS→TS, Webpack→Vite with semantic understanding",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "author": {
         "name": "saqqdy",
         "url": "https://github.com/saqqdy"

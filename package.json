@@ -1,7 +1,7 @@
 {
 	"name": "legacy-modernizer",
 	"description": "AI-powered legacy code modernizer for frontend projects — Vue 2→3, JS→TS, Webpack→Vite semantic migration via Claude Code Skill",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"packageManager": "pnpm@9.15.9",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
@@ -36,10 +36,11 @@
 	},
 	"devDependencies": {
 		"@eslint-sets/eslint-config": "^6.3.1",
-		"@types/node": "^26.0.0",
+		"@types/node": "^26.0.1",
+		"@vitest/coverage-v8": "3.2.6",
 		"eslint": "^9.39.4",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^3.8.4",
+		"prettier": "^3.9.1",
 		"prettier-config-common": "^1.5.0",
 		"rm-all": "^1.1.1",
 		"tsup": "^8.5.1",

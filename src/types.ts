@@ -169,4 +169,4 @@ export interface ModernizerConfig {
 	/** Whether to include suggestions in report */
 	includeSuggestions: boolean
 }
-export const VERSION = '0.1.1' as const
+export const VERSION = '0.1.2' as const
